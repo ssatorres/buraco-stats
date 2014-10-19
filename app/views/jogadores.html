@@ -1,1 +1,47 @@
-<p>This is the jogadores view.</p>
+<div class="row">
+    <div class="col-md-6">
+        <form role="form">
+            <div class="form-group">
+                <label>Nome</label>
+                <input ng-model="nome" class="form-control">
+            </div>
+
+            <div>
+                <button ng-show="form == 'update'" class="btn btn-primary" ng-click="update()">Editar</button>
+                <button ng-show="form == 'insert'" class="btn btn-success" ng-click="insert()">Adicionar</button>
+                <button class="btn btn-default" ng-click="cancel()">Cancelar</button>
+            </div>
+
+        </form>
+    </div>
+    <div class="col-md-6">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-search"></span>
+            </span>
+            <input class="form-control" type="search" ng-model="search" placeholder="Pesquisar…">
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="jogador in jogadores | filter:search">
+                    <td>{{jogador.nome}}</td>
+                    <td>
+                        <button class="btn btn-default btn-mini" ng-click="edit($index)">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </button>
+                        <button class="btn btn-danger btn-mini" ng-click="delete($index)">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>

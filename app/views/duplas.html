@@ -1,1 +1,56 @@
-<p>This is the duplas view.</p>
+<div class="row">
+    <div class="col-md-6">
+        <form role="form">
+            <div class="form-group">
+                <label>Jogador 1</label>
+                <select ng-model="jogador1" class="form-control">
+                    <option ng-repeat="jogador in jogadores" value="{{jogador.nome}}">{{jogador.nome}}</option>
+                </select>
+
+            </div>
+            <div class="form-group">
+                <label>Jogador 2</label>
+                <select ng-model="jogador2" class="form-control">
+                    <option ng-repeat="jogador in jogadores" value="{{jogador.nome}}">{{jogador.nome}}</option>
+                </select>
+
+            </div>
+            <div>
+                <button ng-show="form == 'update'" class="btn btn-primary" ng-click="update()">Editar</button>
+                <button ng-show="form == 'insert'" class="btn btn-success" ng-click="insert()">Adicionar</button>
+                <button class="btn btn-default" ng-click="cancel()">Cancelar</button>
+            </div>
+
+        </form>
+    </div>
+    <div class="col-md-6">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-search"></span>
+            </span>
+            <input class="form-control" type="search" ng-model="search" placeholder="Pesquisar…">
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Dupla</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="dupla in duplas | filter:search">
+                    <td>{{dupla.jogador1}} e {{dupla.jogador2}}</td>
+                    <td>
+                        <button class="btn btn-default btn-mini" ng-click="edit($index)">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </button>
+                        <button class="btn btn-danger btn-mini" ng-click="delete($index)">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>

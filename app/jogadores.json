@@ -1,0 +1,15 @@
+{
+    "jogadores": [{
+    	"id":1,
+        "nome": "Fabio"
+    }, {
+    	"id":2,
+        "nome": "Joveci"
+    }, {
+    	"id":3,
+        "nome": "Salvador"
+    }, {
+    	"id":4,
+        "nome": "Rafaela"
+    }]
+}

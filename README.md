@@ -5,7 +5,8 @@ Entidades
 
 - Jogador
 - Dupla
-  - Jogadores
+  - Jogador 1
+  - Jogador 2
 
 - Jogo
   Status - Finalizado/Em andamento
