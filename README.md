@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/ssatorres/buraco-stats.png?label=ready&title=Ready)](https://waffle.io/ssatorres/buraco-stats)
 buraco-stats
 ============
 
